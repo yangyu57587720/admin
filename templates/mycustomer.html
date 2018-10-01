@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+    <title>Title</title>
+</head>
+<body>
+<h3>个人客户记录</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>跟进客户</th>
+                    <th>跟进人员</th>
+                    <th>跟进时间</th>
+                    <th>跟进状态</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for customer_distrbute in customer_distrbute_list %}
+                <tr>
+                    <td>{{ customer_distrbute.customer }}</td>
+                    <td>{{ customer_distrbute.consultant }}</td>
+                    <td>{{ customer_distrbute.date }}</td>
+                    <td>{{ customer_distrbute.status }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
